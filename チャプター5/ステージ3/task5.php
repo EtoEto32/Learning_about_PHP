@@ -19,3 +19,21 @@ uasort($items, function($a, $b) {
 // 連想配列を出力
 print_r($items);
 ?>
+
+
+<?php
+// 標準入力から全行のデータを取得
+while($input = fgets(STDIN)){
+        // 改行等を取り除きカラムで分割
+        $key_value = explode(",", trim($input));
+        $key = $key_value[0];
+        $value = $key_value[1];
+        // 最初の要素をkeyに、後ろの要素をvalueとして代入
+        $item[$key] = $value;
+}
+// valueを大きい順に並べ替え
+arsort($item);
+print_r($item);
+
+?>
+
